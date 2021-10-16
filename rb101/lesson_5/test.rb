@@ -1,16 +1,19 @@
-def generate_UUID
-  characters = []
-  (0..9).each { |digit| characters << digit.to_s }
-  ('a'..'f').each { |digit| characters << digit }
-
-  uuid = ''
-  sections = [8,4,4,4,12]
-  sections.each_with_index do |section, index|
-    section.times { uuid += characters.sample }
-    uuid += '-' unless index >= sections.size - 1
-  end
-
-  uuid
-end
-
-p generate_UUID
+todo_lists = [
+  {
+    id: 1,
+    list_name: 'Groceries',
+    todos: [
+      { id: 1, name: 'Bread', completed: false },
+      { id: 2, name: 'Milk', completed: false },
+      { id: 3, name: 'Apple Juice', completed: false }
+    ]
+  },
+  {
+    id: 2,
+    list_name: 'Homework',
+    todos: [
+      { id: 1, name: 'Math', completed: false },
+      { id: 2, name: 'English', completed: false }
+    ]
+  }
+]
