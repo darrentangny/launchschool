@@ -9,6 +9,22 @@ def staggered_case(str)
   str_arr.join
 end
 
-staggered_case('I Love Launch School!') == 'I LoVe lAuNcH ScHoOl!'
-staggered_case('ALL_CAPS') == 'AlL_CaPs'
-staggered_case('ignore 77 the 444 numbers') == 'IgNoRe 77 ThE 444 NuMbErS'
+def staggered_case(str)
+  condition = true
+  str_arr = str.chars.map do |char|
+    if condition == true && char =~ /[a-z]/i
+      condition = !condition
+      char.upcase
+    elsif condition == false && char =~ /[a-z]/i
+      condition = !condition
+      char.downcase
+    else
+      char
+    end
+  end
+  str_arr.join
+end
+
+staggered_case('I Love Launch School!') == 'I lOvE lAuNcH sChOoL!'
+staggered_case('ALL CAPS') == 'AlL cApS'
+staggered_case('ignore 77 the 444 numbers') == 'IgNoRe 77 ThE 444 nUmBeRs'
