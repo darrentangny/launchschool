@@ -9,6 +9,13 @@ RANK_KEY = { 'A' => 'Ace', '1' => 'One', '2' => 'Two', '3' => 'Three', '4' => 'F
              '5' => 'Five', '6' => 'Six', '7' => 'Seven', '8' => 'Eight', '9' => 'Nine',
              '10' => 'Ten', 'J' => 'Jack', 'Q' => 'Queen', 'K' => 'King' }
 
+=begin
+for what it's worth, launchschool's format:
+SUITS = ['H', 'D', 'S', 'C']
+VALUES = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A']
+they use a method whose block contains: SUITS.product(VALUES).shuffle
+=end
+
 require 'io/console'
 
 # source for #continue_game: https://stackoverflow.com/questions/34594018/how-to-code-press-key-to-continue
