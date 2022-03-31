@@ -52,30 +52,6 @@ class Deck
   end
 end
 
-# class Deck
-#   RANKS = ((2..10).to_a + %w(Jack Queen King Ace)).freeze
-#   SUITS = %w(Hearts Clubs Diamonds Spades).freeze
-
-#   def initialize
-#     reset
-#   end
-
-  # def draw
-  #   reset if @deck.empty?
-  #   @deck.pop
-  # end
-
-#   private
-
-  # def reset
-  #   @deck = RANKS.product(SUITS).map do |rank, suit|
-  #     Card.new(rank, suit)
-  #   end
-
-  #   @deck.shuffle!
-  # end
-# end
-
 deck = Deck.new
 drawn = []
 52.times { drawn << deck.draw }
@@ -86,6 +62,15 @@ drawn2 = []
 52.times { drawn2 << deck.draw }
 
 p drawn != drawn2 # Almost always.
+
+# Purpose of program: two classes, deck and card classes. Deck class is
+# populated by 52 unique cards, can be drawn from, and ultimately resets
+# and reshuffles if all cards are drawn
+
+# Cards can be compared with one another via operators
+# Problem seems to trace back to line 33 (coincidence!?)
+# Commented out method below it actual leads to everything working 
+# => true
 
 =begin
 # Note that line 88 throws the following error: 
