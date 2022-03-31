@@ -30,14 +30,14 @@ class Deck
     reset
   end
 
-  # def draw
-  #   @deck.empty? ? reset : @deck.pop
-  # end
-
   def draw
-    reset if @deck.empty?
-    @deck.pop
+    @deck.empty? ? reset : @deck.pop
   end
+
+  # def draw
+  #   reset if @deck.empty?
+  #   @deck.pop
+  # end
 
   private
 
@@ -86,3 +86,15 @@ drawn2 = []
 52.times { drawn2 << deck.draw }
 
 p drawn != drawn2 # Almost always.
+
+=begin
+# Note that line 88 throws the following error: 
+
+Traceback (most recent call last):
+        4: from high_low_2.rb:88:in `<main>'
+        3: from high_low_2.rb:88:in `!='
+        2: from high_low_2.rb:88:in `=='
+        1: from high_low_2.rb:88:in `=='
+high_low_2.rb:21:in `<=>': undefined method `value' for [#<Card:0x0000558615fbb440 @rank=6, @suit="Spades">]:Array (NoMethodError)
+Did you mean?  values_at
+=end
