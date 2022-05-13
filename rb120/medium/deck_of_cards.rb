@@ -31,13 +31,8 @@ class Deck
   end
 
   def draw
-    @deck.empty? ? reset : @deck.pop
+    @deck.empty? ? reset && @deck.pop : @deck.pop
   end
-
-  # def draw
-  #   reset if @deck.empty?
-  #   @deck.pop
-  # end
 
   private
 
@@ -62,24 +57,3 @@ drawn2 = []
 52.times { drawn2 << deck.draw }
 
 p drawn != drawn2 # Almost always.
-
-# Purpose of program: two classes, deck and card classes. Deck class is
-# populated by 52 unique cards, can be drawn from, and ultimately resets
-# and reshuffles if all cards are drawn
-
-# Cards can be compared with one another via operators
-# Problem seems to trace back to line 33 (coincidence!?)
-# Commented out method below it actual leads to everything working 
-# => true
-
-=begin
-# Note that line 88 throws the following error: 
-
-Traceback (most recent call last):
-        4: from high_low_2.rb:88:in `<main>'
-        3: from high_low_2.rb:88:in `!='
-        2: from high_low_2.rb:88:in `=='
-        1: from high_low_2.rb:88:in `=='
-high_low_2.rb:21:in `<=>': undefined method `value' for [#<Card:0x0000558615fbb440 @rank=6, @suit="Spades">]:Array (NoMethodError)
-Did you mean?  values_at
-=end

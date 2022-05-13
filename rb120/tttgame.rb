@@ -42,9 +42,11 @@ class Board
   end
 
   def moves(human_marker, comp_marker)
+    if center_empty?
+      return [5]
+    end
     WINNING_LINES.each do |line|
       squares = @squares.values_at(*line)
-      # binding.pry
       if !squares.any?(&:unmarked?)
         nil
       elsif two_comp_markers?(squares, comp_marker)
@@ -56,6 +58,10 @@ class Board
       end
     end
     return []
+  end
+
+  def center_empty?
+    @squares[5].marker == ' '
   end
 
   # rubocop:disable Metrics/AbcSize

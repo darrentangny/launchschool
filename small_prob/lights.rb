@@ -23,3 +23,4 @@ end
 
 lights(5)
 lights(10)
+lights(1000)
