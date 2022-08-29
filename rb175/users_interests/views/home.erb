@@ -1,0 +1,9 @@
+<div>
+  <ul>
+    <% @yaml.each_key do |key| %>
+      <li>
+        <a href="/<%= key.to_s %>"><%= key.to_s.capitalize %></a>
+      </li>
+    <% end %>
+  </ul>
+</div>
