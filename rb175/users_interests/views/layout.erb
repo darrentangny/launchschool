@@ -1,17 +1,11 @@
 <!doctype html>
 <html>
   <head>
-    <meta charset="utf-8">
+  <meta charset="utf-8">
+  <title>Users and Interests</title>
   </head>
-
-  <body>
-    <div id="content">
-      <%= yield %>
-    </div>
-
-    <div id="footer">
-      <p>There are <%= @yaml.keys.count %> users with a total of 
-      <%= count_interests %> interests.</p>
-    </div>
-  </body>
+<body>
+  <%= yield %>
+  <p>There are <%= @users.size %> users with a total of <%= count_interests(@users) %> interests.</p>
+</body>
 </html>

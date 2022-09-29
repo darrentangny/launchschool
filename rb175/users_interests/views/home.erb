@@ -1,9 +1,8 @@
-<div>
-  <ul>
-    <% @yaml.each_key do |key| %>
-      <li>
-        <a href="/<%= key.to_s %>"><%= key.to_s.capitalize %></a>
-      </li>
-    <% end %>
-  </ul>
-</div>
+<ul>
+  <% @results.each do |name, _| %>
+    <li><a href="user/#{name}"><%= name %></a></li>
+  <% end %>
+</ul>
+
+<!-- Couldn't iterate before because neglected to use "before do" with -->
+<!-- @results instance variable. -->

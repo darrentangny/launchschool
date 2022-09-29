@@ -21,14 +21,16 @@ GEM
       sinatra (~> 1.4.0)
       tilt (>= 1.3, < 3)
     tilt (2.0.11)
+    webrick (1.7.0)
 
 PLATFORMS
-  ruby
+  x86_64-linux
 
 DEPENDENCIES
   erubis
   sinatra (~> 1.4.7)
   sinatra-contrib
+  webrick
 
 BUNDLED WITH
-   2.1.4
+   2.3.22
